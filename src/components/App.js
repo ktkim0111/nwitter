@@ -19,8 +19,8 @@ function App() {
     });
   });
   const refreshUser = () => {
-    console.log(authService.currentUser.displayName);
-    setUserObj({ displayName: "BS" });
+    const user = authService.currentUser;
+    setUserObj(Object.assign({}, user));
   };
 
   return (
@@ -34,7 +34,6 @@ function App() {
       ) : (
         "Initializing..."
       )}
-      <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
     </>
   );
 }
